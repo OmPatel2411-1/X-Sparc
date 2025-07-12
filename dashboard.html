@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard - ReWear</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-white to-blue-50 min-h-screen font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-blue-600">ReWear</h1>
+      <nav class="space-x-6">
+        <a href="#" class="text-gray-600 hover:text-blue-600">Home</a>
+        <a href="#" class="text-gray-600 hover:text-blue-600">Browse</a>
+        <a href="#" class="text-gray-600 hover:text-blue-600">My Dashboard</a>
+        <a href="#" class="text-gray-600 hover:text-blue-600">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dashboard -->
+  <section class="container mx-auto py-10 px-4 fade-in">
+    <!-- Profile Section -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-10 flex flex-col md:flex-row gap-6">
+      <div class="flex-shrink-0">
+        <div class="w-32 h-32 bg-gray-200 rounded-full border-4 border-blue-300"></div>
+      </div>
+      <div class="flex-1 space-y-3">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+          <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded text-center">Username</div>
+          <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded text-center">Points</div>
+          <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded text-center">Items Listed</div>
+          <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded text-center">Items Purchased</div>
+        </div>
+        <textarea class="w-full mt-2 border border-gray-300 rounded-md p-3 resize-none" placeholder="Your Bio or Status..."></textarea>
+      </div>
+    </div>
+
+    <!-- My Listings -->
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-4 text-blue-700">My Listings</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition duration-300">
+          <div class="bg-gray-200 h-40 rounded mb-2"></div>
+          <p class="text-sm text-center text-gray-600">Clothing Item 1</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition duration-300">
+          <div class="bg-gray-200 h-40 rounded mb-2"></div>
+          <p class="text-sm text-center text-gray-600">Clothing Item 2</p>
+        </div>
+        <!-- Add more cards dynamically -->
+      </div>
+    </div>
+
+    <!-- My Purchases -->
+    <div>
+      <h2 class="text-xl font-semibold mb-4 text-blue-700">My Purchases</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition duration-300">
+          <div class="bg-gray-200 h-40 rounded mb-2"></div>
+          <p class="text-sm text-center text-gray-600">Purchase 1</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition duration-300">
+          <div class="bg-gray-200 h-40 rounded mb-2"></div>
+          <p class="text-sm text-center text-gray-600">Purchase 2</p>
+        </div>
+        <!-- Add more cards dynamically -->
+      </div>
+    </div>
+  </section>
+</body>
+</html>

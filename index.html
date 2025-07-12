@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReWear - Home</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #eee;
+      background: #000;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h2 {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 2rem;
+      color: #fff;
+      letter-spacing: 1px;
+      flex: 1;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1470&q=80') center/cover fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6rem 3rem 4rem;
+      position: relative;
+      color: #fff;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #fff;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, slide-in 1.5s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #f0f0f0;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease-in-out 1s forwards;
+      opacity: 0;
+    }
+
+    .btn-group a {
+      padding: 0.75rem 1.5rem;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      border: 2px solid #fff;
+      color: #fff;
+      background-color: transparent;
+      transition: 0.3s ease;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .btn-group a:hover {
+      background-color: #00bcd4;
+      color: #000;
+      border-color: #00bcd4;
+    }
+
+    .jacket {
+      width: 280px;
+      animation: rotateY 8s linear infinite;
+      transform-style: preserve-3d;
+    }
+
+    @keyframes rotateY {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    .scroll-cards {
+      padding: 5rem 1rem;
+      background: #111;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .info-card {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      color: #f8f8f8;
+      font-weight: 500;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .info-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.8s ease-in-out;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .info-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+      color: #333;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes slide-in {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @media screen and (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .jacket {
+        margin-top: 2rem;
+        width: 180px;
+      }
+
+      nav {
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>ReWear</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Add Item</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.php">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1 id="slogan">Swap. Save. Sustain.</h1>
+      <p>Welcome to ReWear – a platform to exchange unused clothing and promote sustainable fashion.</p>
+      <div class="btn-group">
+        <a href="lending.html">Browse Items</a>
+        <a href="itempage.html">List Your Item</a>
+      </div>
+    </div>
+    <img id="jacket" class="jacket" src="https://m.media-amazon.com/images/I/718RX3ExR7L._UY1100_.jpg" alt="Rotating Jacket" />
+  </section>
+
+  <section class="scroll-cards">
+    <div class="card-container">
+      <div class="info-card">
+        <h3>Learning Hub</h3>
+        <p>Real-world sustainability insights and fashion reuse tips to support your eco-conscious journey.</p>
+      </div>
+      <div class="info-card">
+        <h3>Community Challenges</h3>
+        <p>Join events and campaigns where users contribute by swapping, sharing, and upcycling clothes.</p>
+      </div>
+      <div class="info-card">
+        <h3>Build Your Style</h3>
+        <p>Explore trendy finds from others and create your own eco-friendly wardrobe easily.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ReWear. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Retype effect reset
+    window.onload = () => {
+      const slogan = document.getElementById('slogan');
+      slogan.style.animation = 'none';
+      slogan.offsetHeight;
+      slogan.style.animation = null;
+    };
+
+    // Scroll reveal effect
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.info-card').forEach(card => {
+      observer.observe(card);
+    });
+
+    // Image rotation change
+    const jacket = document.getElementById("jacket");
+    const images = [
+      "https://m.media-amazon.com/images/I/718RX3ExR7L._UY1100_.jpg", // your current image
+      "https://images.jdmagicbox.com/quickquotes/images_main/bale-of-men-round-neck-t-shirt-used-cloth-korean-second-hand-bale-t-shrift-2226350087-w839hcee.png",
+      "https://5.imimg.com/data5/SELLER/Default/2023/10/351965158/BF/UK/OA/15528069/black-printed-t-shirt-500x500.jpg"
+    ];
+    let currentIndex = 0;
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      jacket.src = images[currentIndex];
+    }, 8000); // matches CSS animation
+  </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReWear – Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      background-color: #222;
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .search-bar {
+      padding: 8px 12px;
+      width: 250px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .banner {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .categories {
+      padding: 20px;
+    }
+
+    .categories h3 {
+      margin-bottom: 10px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+    }
+
+    .category-box {
+      background: #d4edda;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .products {
+      padding: 20px;
+    }
+
+    .products h3 {
+      margin-bottom: 10px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-card p {
+      padding: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">👕 ReWear</div>
+    <input type="text" placeholder="Search clothing..." class="search-bar" />
+  </header>
+
+  <section class="banner">
+    <img src="https://t3.ftcdn.net/jpg/03/53/59/86/360_F_353598619_7JyKi3bL0GxDRsMDwVES2ugt2dbGZ6IW.jpg" alt="Banner Image" />
+  </section>
+
+  <section class="categories">
+    <h3>Categories Section</h3>
+    <div class="category-grid">
+      <div class="category-box">T-Shirts</div>
+      <div class="category-box">Jackets</div>
+      <div class="category-box">Jeans</div>
+      <div class="category-box">Dresses</div>
+      <div class="category-box">Kids</div>
+      <div class="category-box">Accessories</div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h3>Product Listings</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="data:image/jpeg;base64,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" alt="Product 1">
+        <p>Striped Shirt</p>
+      </div>
+      <div class="product-card">
+        <img src="https://motowearindia.com/wp-content/uploads/2025/05/A3.png" alt="Product 2">
+        <p>Denim Jacket</p>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1571727826802-bb30c1c9e3b9?auto=format&fit=crop&w=600&q=80" alt="Product 3">
+        <p>Casual Dress</p>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1555529771-35a1d79ff83b?auto=format&fit=crop&w=600&q=80" alt="Product 4">
+        <p>Black Jeans</p>
+      </div>
+    </div>
+  </section>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const productData = localStorage.getItem("newProduct");
+    if (productData) {
+      const product = JSON.parse(productData);
+
+      const grid = document.querySelector('.product-grid');
+      const card = document.createElement('div');
+      card.className = "product-card";
+      card.innerHTML = `
+        <img src="${product.image}" alt="New Product">
+        <p>${product.description} – ₹${product.price}</p>
+      `;
+      grid.prepend(card); // Add new product at the beginning
+
+      // Optional: clear data after use
+      localStorage.removeItem("newProduct");
+    }
+  });
+</script>
+
+
+</body>
+</html>
